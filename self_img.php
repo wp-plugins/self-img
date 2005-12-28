@@ -54,25 +54,6 @@ function self_img_button()
 	}
 }
 
-if(!function_exists('self_img_button')) {
-	function self_img_button($caption, $js_onclick, $title = '') {
-?>
-        	if(toolbar) {
-			var theButton = document.createElement('input');
-			theButton.type = 'button';
-			theButton.value = '<?php echo $caption; ?>';
-			theButton.onclick = <?php echo $js_onclick; ?>;
-			theButton.className = 'ed_button';
-			theButton.title = "<?php echo $title; ?>";
-			theButton.id = "<?php echo "ed_{$caption}"; ?>";
-			toolbar.appendChild(theButton);
-		}
-<?php
-	}
-}
-
-?>
-<?php
 /*
 Taken from Phil's adsense plugin
 Author: Phil Hord
