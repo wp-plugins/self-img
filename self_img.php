@@ -72,3 +72,32 @@ if(!function_exists('self_img_button')) {
 }
 
 ?>
+<?php
+/*
+Taken from Phil's adsense plugin
+Author: Phil Hord
+Author URI: http://philhord.com
+*/
+
+if(!function_exists('edit_insert_button'))
+{
+        //edit_insert_button: Inserts a button into the editor
+        function edit_insert_button($caption, $js_onclick, $title = '')
+        {
+?>
+	        if(toolbar)
+	        {
+	                var theButton = document.createElement('input');
+	                theButton.type = 'button';
+	                theButton.value = '<?php echo $caption; ?>';
+	                theButton.onclick = <?php echo $js_onclick; ?>;
+	                theButton.className = 'ed_button';
+	                theButton.title = "<?php echo $title; ?>";
+	                theButton.id = "<?php echo "ed_{$caption}"; ?>";
+	                toolbar.appendChild(theButton);
+	        }
+<?php
+
+        }
+}
+?>
